@@ -60,12 +60,13 @@ window.addEventListener('scroll', scrollUp);
 /*Scroll sections active link */
 
 const sections = document.querySelectorAll('section[id]');
+
 const scrollActive = () => {
   const scrollDown = window.scrollY;
 
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight,
-          sectionTop = current.offsetTop - 58,
+          sectionTop = current.offsetTop - 68,
           sectionId = current.getAttribute('id'),
           sectionsClass = document.querySelector(".nav-menu a[href*=" + sectionId + ']');
     if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
@@ -116,9 +117,9 @@ const sr = ScrollReveal({
   delay: 400,
   // reset: true // Animations repeat
 })
-sr.reveal(`.home-profile`, {origin:'right'})
-sr.reveal(`.home-name, .home-info`, {origin:'left'})
-
+sr.reveal(`.home-profile, .about-image, .contact-mail`, {origin:'right'})
+sr.reveal(`.home-name, .home-info, .about-container .section-title-1, .about-info, .contact-social, .contact-data`, {origin:'left'})
+sr.reveal(`.services-card, .projects-card`, {interval: 100})
 
 
 
